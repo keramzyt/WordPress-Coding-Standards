@@ -344,6 +344,7 @@ class ControlStructureSpacingSniff extends Sniff {
 				}
 
 				if ( \T_WHITESPACE !== $this->tokens[ ( $parenthesisCloser + 1 ) ]['code']
+					&& T_COLON !== $this->tokens[ ( $parenthesisCloser + 1 ) ]['code']
 					&& ( isset( $scopeOpener ) && \T_COLON !== $this->tokens[ $scopeOpener ]['code'] )
 				) {
 					$error = 'Space between opening control structure and closing parenthesis is required';
